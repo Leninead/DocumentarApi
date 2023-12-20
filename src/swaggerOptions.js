@@ -8,9 +8,9 @@ module.exports = {
       },
     },
     apis: [
-      `${__dirname}/src/docs/products.yaml`,
-      `${__dirname}/src/docs/cart.yaml`,
-      
+      `${__dirname}/docs/products.yaml`,
+      `${__dirname}/docs/cart.yaml`,
     ],
+    
   };
   
