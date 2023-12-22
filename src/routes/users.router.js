@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const passport = require('passport'); // Add this line
+const passport = require('passport'); 
 const authenticationMiddleware = require('../middlewares/authentication'); // Add this line
 const UserController = require('../controllers/userController');
-const userController = new UserController(); // Create an instance
-
+const userController = new UserController(); 
+const { generateToken } = require('../routes/auth');
 // Authentication middleware
 const jwtAuthMiddleware = passport.authenticate('jwt', { session: false });
 
@@ -150,7 +150,10 @@ router.post('/register', async (req, res) => {
  *         description: Internal Server Error.
  */
 
-router.post('/login', (req, res) => userController.loginUser(req, res));
+router.post('/login', generateToken, (req, res) => {
+  res.json({ token: req.token });
+});
+
 
 
 

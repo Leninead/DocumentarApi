@@ -35,5 +35,8 @@
   },
   "nodemonConfig": {
     "ext": "js,json"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.5"
   }
 }
